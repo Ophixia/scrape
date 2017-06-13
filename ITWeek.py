@@ -7,8 +7,10 @@ def main():
     soup = BeautifulSoup(res.content, 'html.parser')
     companies = soup.find_all('tr')
     for company in companies:
-        print(company.text)
+        exhib = company.find('td',{"class":"td_exhibitions"})
+        if exhib != None:
+            if exhib.text == "‘g‚İƒVƒXƒeƒ€ŠJ”­‹Zp“W":
+                print(company.text)
 
 if __name__ == '__main__':
     main()
-
